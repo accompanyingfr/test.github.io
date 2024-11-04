@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@dior ~ dox.mom</title>
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="dox.mom">
+        <meta property="og:url" content="https://dox.mom/">
+        <meta property="og:title" content="@dior ~ dox.mom">
+        <meta property="og:description" content="💸💸💸">
+        <meta property="og:image" content="https://dox.mom/profilepic.jpg">
+    </head>
+
+    <style>
+        html {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            background-color:#060707;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            font-family: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
+            text-align: center;
+            color: white;
+        }
+
+        #blur-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 31px;
+            width: 30%;
+            background-color: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 10px;
+            color: rgba(255, 255, 255, 0.774);
+            text-align: center;
+            animation: fadein 1s forwards;
+        }
+
+        #profile-picture {
+            width: 100px;
+            height: 100px;
+            background-color: #ffffff00;
+            border-radius: 50%;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+        }
+
+        #profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #username {
+            font-size: 35px;
+            margin-top: 86px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+
+        #bio {
+            font-size: 18px;
+            margin-top: 1px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+
+        #video-background {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            animation: fadein 1s forwards;
+        }
+
+        .next {
+            top: 50%;
+            left: 50%;
+            color: #fff;
+            position: absolute;
+            font-weight: normal;
+            font-size: 15px;
+            transform: translate(-50%, -50%);
+            font-family: consolas, sans-serif;
+        }
+
+        @keyframes fadeout {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #socials {
+            margin-top: 14px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        #socials a img {
+            width: 25px;
+            height: 25px;
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        #socials a img:hover {
+            transform: scale(1.1);
+            filter: brightness(0) invert(0.8);
+        }
+    </style>
+
+    <body>
+        <div id="button"><b class="next">~> Enter the Void <~</b></div>
+
+        <div id="blur-box">
+            <div id="profile-picture">
+                <img src="profilepic.jpg" alt="Profile Picture">
+            </div>
+            <div id="username">dior</div>
+            <div id="bio">im a devious ass nigga</div>
+            <div id="socials">
+                <a href="https://open.spotify.com/user/31gdgitcvpqk6j7vx2g2w7c33pru" target="_blank"><img src="icons/spotify.svg" alt="Spotify"></a>
+                <a href="https://discord.dog/1141655752520511500" target="_blank"><img src="icons/discord.svg" alt="Discord"></a>
+            </div>
+        </div>
+
+        <video id="video-background" loop>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+
+        <script>
+            document.getElementById("button").addEventListener("click", function () {
+                var button = this;
+                button.style.animation = "fadeout 1s forwards";
+
+                var video = document.getElementById("video-background"); 
+                document.getElementById("blur-box").style.display = "block";
+                document.getElementById("video-background").style.display = "block";
+				video.volume = 0.30;
+                video.play();
+            });
+        </script>
+    </body>
+</html>
